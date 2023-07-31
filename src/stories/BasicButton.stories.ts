@@ -1,6 +1,6 @@
 // Button.stories.ts
 import { defineComponent } from 'vue';
-import BasicButton from '../components/BasicButton.vue';
+import BasicButton from '../components/BasicButton/BasicButton.vue';
 import type { StoryFn } from '@storybook/vue3';
 
 export default {

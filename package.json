@@ -15,6 +15,8 @@
     "@astrojs/tailwind": "^4.0.0",
     "@astrojs/vue": "^2.2.1",
     "astro": "^2.9.6",
+    "astro-compress": "^1.1.50",
+    "esbuild": "^0.18.17",
     "vue": "^3.2.30"
   },
   "devDependencies": {
@@ -25,6 +27,7 @@
     "@storybook/testing-library": "^0.2.0",
     "@storybook/vue3": "^7.1.1",
     "@storybook/vue3-vite": "^7.1.1",
+    "cssnano": "^6.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.64.1",

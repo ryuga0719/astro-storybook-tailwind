@@ -1,13 +1,13 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import BasicButton from '../components/BasicButton/BasicButton.vue';
+import Layout from '@layouts/Layout.astro';
+import BasicButton from '@components/BasicButton/BasicButton.vue';
 import LinkBasic from '@components/LinkBasic/LinkBasic.vue';
 ---
 
-<Layout title="トップ">
+<Layout title="article">
 	<main>
-		<h1>トップ</h1>
-		<LinkBasic client:visible href="/article">article</LinkBasic>
+		<h1>Article</h1>
+		<LinkBasic client:visible href="/article/detail">detail</LinkBasic>
 		<BasicButton client:load>ボタン</BasicButton>
 		<img src="/assets/img/sample.png" alt="">
 	</main>

@@ -1,0 +1,31 @@
+---
+import Layout from '@layouts/Layout.astro';
+import BasicButton from '@components/BasicButton/BasicButton.vue';
+
+import "./index.scss"; // scopedできなくなる
+---
+
+<Layout title="detail">
+	<main>
+		<h1>Detail</h1>
+		<h2>test</h2>
+		<a href="/">top</a>
+		<a href="/article">article</a>
+		<BasicButton client:load>ボタン</BasicButton>
+		<img src="/assets/img/sample.png" alt="">
+	</main>
+</Layout>
+
+<style lang="scss">
+	h1 {
+		color: var(--heading);
+	}
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		font-size: 20px;
+		line-height: 1.6;
+	}
+</style>
