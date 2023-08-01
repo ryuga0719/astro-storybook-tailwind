@@ -1,11 +1,16 @@
-// Button.stories.ts
-import { defineComponent } from 'vue';
-import BasicButton from '../components/BasicButton/BasicButton.vue';
-import type { StoryFn } from '@storybook/vue3';
+import type { StoryFn, Meta } from '@storybook/vue3';
+import mdx from './BasicButton.mdx';
+import BasicButton from './BasicButton.vue';
 
 export default {
-  title: 'Example/BasicButton',
+  title: 'Components/BasicButton',
   component: BasicButton,
+  parameters: {
+    docs: {
+      page: mdx
+    },
+    controls: { hideNoControlsWarning: true } // Controlsで制御する項目がない場合、警告メッセージを非表示にする
+  },
   argTypes: {
     type: {
       control: {
@@ -18,7 +23,7 @@ export default {
     disabled: { control: 'boolean' },
     rounded: { control: 'boolean' },
   },
-};
+} as Meta;
 
 const Template = (
   args: Record<string, unknown>,

@@ -1,44 +1,45 @@
-import { defineConfig } from 'astro/config';
-import vue from '@astrojs/vue';
+import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
+import vue from '@astrojs/vue';
+import { defineConfig } from 'astro/config';
 
-import compress from 'astro-compress';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [vue(), tailwind()],
+  site: 'https://sample.com', // TODO: ドメインが決まったら修正する
+  integrations: [vue(), tailwind(), sitemap()],
   vite: {
     build: {
       manifest: false,
       outDir: 'docs',
       assetsDir: 'assets',
-      cssCodeSplit: false, // buildした際にcssを分割しない
+      cssCodeSplit: false,
+      // buildした際にcssを分割しない
       rollupOptions: {
         output: {
-          // assetFileNames: (assetInfo) => {
-          //   console.log(assetInfo.name, '🍎');
-          //   let extType = assetInfo.name.split('.').at(1);
-          //   // if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
-          //   //   extType = 'img';
-          //   // }
-          //   if (/css|scss/i.test(extType)) {
-          //     extType = 'css';
-          //   }
-          //   return `assets/${extType}/[name][extname]`;
-          // },
+          assetFileNames: assetInfo => {
+            let extType = assetInfo.name.split('.').at(1);
+            // if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
+            //   extType = 'img';
+            // }
+            if (/css|scss/i.test(extType)) {
+              extType = 'css';
+            }
+            return `assets/${extType}/[name]-[hash][extname]`;
+          },
           chunkFileNames: 'assets/js/vendor/[name]-[hash].js',
           // ビルド後のチャンクファイル名
-          entryFileNames: 'assets/js/[name].js', // ビルド後のentryのjsファイル名
-        },
-      },
+          entryFileNames: 'assets/js/[name].js' // ビルド後のentryのjsファイル名
+        }
+      }
     },
 
     css: {
       preprocessorOptions: {
         scss: {
-          charset: false,
-        },
-      },
-    },
-  },
+          charset: false
+        }
+      }
+    }
+  }
 });

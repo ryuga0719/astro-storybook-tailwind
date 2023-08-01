@@ -1,5 +1,5 @@
 /** @type { import('@storybook/vue3').Preview } */
-import '../src/assets/css/index.scss';
+import '../src/assets/css/global.scss';
 const preview = {
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
@@ -9,6 +9,11 @@ const preview = {
         date: /Date$/,
       },
     },
+    docs: {
+    source: {
+      state: 'open',
+    },
+  },
   },
 };
 

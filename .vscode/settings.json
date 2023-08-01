@@ -38,8 +38,13 @@
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptreact"
+    "typescriptreact",
+    "astro"
   ],
+  "emmet.includeLanguages": {
+    "astro": "html",
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
   "stylelint.validate": [
     "html",
     "css",

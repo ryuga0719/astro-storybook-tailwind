@@ -1,0 +1,35 @@
+{
+  "plugins": ["stylelint-prettier", "stylelint-scss"],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recommended-scss",
+    "stylelint-config-recess-order",
+    "stylelint-config-html/html",
+    "stylelint-config-html/vue",
+    "stylelint-config-html/astro"
+  ],
+  "rules": {
+    "color-function-notation": "legacy",
+    "at-rule-no-unknown": null,
+    "no-empty-source": true,
+    "selector-type-no-unknown": [
+      true,
+      {
+        "ignore": ["custom-elements", "default-namespace"]
+      }
+    ],
+    "declaration-block-no-duplicate-properties": true,
+    "color-named": "never",
+    "indentation": 2,
+    "string-quotes": "single",
+    "no-descending-specificity": null,
+    "rule-empty-line-before": [
+      "always",
+      {
+        "except": "inside-block"
+      }
+    ],
+    "import-notation": null,
+    "declaration-property-value-no-unknown": true
+  }
+}

@@ -1,8 +1,7 @@
 ---
-import Layout from '@layouts/Layout.astro';
 import BasicButton from '@components/BasicButton/BasicButton.vue';
+import Layout from '@layouts/Layout.astro';
 
-import "./index.scss"; // scopedできなくなる
 ---
 
 <Layout title="detail">
@@ -17,15 +16,20 @@ import "./index.scss"; // scopedできなくなる
 </Layout>
 
 <style lang="scss">
-	h1 {
-		color: var(--heading);
-	}
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		font-size: 20px;
-		line-height: 1.6;
-	}
+  h1 {
+    color: var(--heading);
+  }
+
+  h2 {
+    color: #0ff;
+  }
+
+  main {
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    padding: 1rem;
+    margin: auto;
+    font-size: 20px;
+    line-height: 1.6;
+  }
 </style>
