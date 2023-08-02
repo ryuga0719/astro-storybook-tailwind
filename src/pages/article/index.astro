@@ -7,6 +7,7 @@ import Layout from '@layouts/Layout.astro';
 <Layout title="article">
 	<main>
 		<h1>Article</h1>
+    <p>global 変数テスト</p>
 		<LinkBasic client:visible href="/article/detail">detail</LinkBasic>
 		<BasicButton client:load>ボタン</BasicButton>
 		<img src="/assets/img/sample.png" alt="">
@@ -14,6 +15,12 @@ import Layout from '@layouts/Layout.astro';
 </Layout>
 
 <style lang="scss">
+  @import '../../assets/css/global';
+
+  p {
+    color: $red;
+  }
+
   main {
     width: 800px;
     max-width: calc(100% - 2rem);
